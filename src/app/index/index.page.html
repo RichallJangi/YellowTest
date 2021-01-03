@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>index</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>Normaal de index, maar nu een testpagina</p>
+  <ion-button (click)="nav.push(measurementPage)">
+    Metingen
+  </ion-button>
+  <ion-button (click)="database.insertMeasurement(0.69, 'an empty string');">
+    Voeg een meting toe
+  </ion-button>
+  <ion-button (click)="loadData()">
+    Laad de metingen
+  </ion-button>
+  <p>{{error}}</p>
+  <ion-list *ngFor="let measurement of measurements">
+    <p>{{measurement.BAC}}</p>
+  </ion-list>
+
+</ion-content>

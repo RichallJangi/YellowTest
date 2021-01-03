@@ -1,0 +1,9 @@
+{
+  "name": "yellow_app",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "14a8e561"
+}
