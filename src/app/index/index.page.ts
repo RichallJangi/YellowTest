@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {MeasurementPage} from '../measurement/measurement.page';
 import {IonNav} from '@ionic/angular';
 import {SQLite, SQLiteObject} from '@ionic-native/sqlite/ngx';
 import {DatabaseService} from '../services/database.service';
 import {format} from 'date-fns';
+import {MetingPage} from '../meting/meting.page';
 
 @Component({
   selector: 'app-index',
@@ -11,7 +11,7 @@ import {format} from 'date-fns';
   styleUrls: ['./index.page.scss'],
 })
 export class IndexPage implements OnInit {
-  public measurementPage = MeasurementPage;
+  public measurementPage = MetingPage;
   public db: SQLiteObject;
   public error = 'nothing yet';
   public measurements;
