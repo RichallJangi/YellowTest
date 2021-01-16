@@ -8,7 +8,18 @@
   </ion-card-header>
 
   <ion-card-content class="content-text">
-    Je mag nog één glas alcohol drinken.
+    <div *ngIf="adviesEen">
+      <h2>Nuchter</h2>
+    </div>
+
+    <div *ngIf="adviesTwee">
+      <h2>Neem nog een glaasje</h2>
+    </div>
+
+    <div *ngIf="adviesDrie">
+      <h2>Oke nog eentje dan</h2>
+    </div>
+
   </ion-card-content>
 </ion-card>
 
