@@ -26,7 +26,8 @@ export class DatabaseService {
           this.db = db;
           this.db.executeSql('DROP TABLE if exists measurements');
           this.db.executeSql(
-              'create table if not exists measurements(id INTEGER PRIMARY KEY AUTOINCREMENT , BAC FLOAT(6, 5), note VARCHAR(255), date TIMESTAMP(0)); ', [])
+              'create table if not exists measurements(id INTEGER PRIMARY KEY AUTOINCREMENT , BAC FLOAT(6, 5), note VARCHAR(255), date TIMESTAMP(0)); ' +
+              '', [])
               .then(() => {
                   console.log('Executed SQL');
               })

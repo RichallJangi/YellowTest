@@ -12,7 +12,7 @@ export class AdviesPage implements OnInit {
    let adviesTwee: boolean = false;
    let adviesDrie: boolean = false;
    let adviesVier: boolean = false;
-   let AdviesVijf: boolean = false;
+   let adviesVijf: boolean = false;
 
    if(value<200)
      {

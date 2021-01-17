@@ -5,11 +5,8 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
-  },
-  {
-    path: 'meting',
-    loadChildren: () => import('./meting/meting.module').then( m => m.MetingPageModule)
   }
+
 ];
 @NgModule({
   imports: [
