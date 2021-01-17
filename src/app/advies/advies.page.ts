@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdviesPage implements OnInit {
      constructor() {
-   value: int = 240;
-   adviesEen: boolean =  false;
-   adviesTwee: boolean = false;
-   adviesDrie: boolean = false;
-   adviesVier: boolean = false;
-   AdviesVijf: boolean = false;
+   let value: number = 240;
+   let adviesEen: boolean =  false;
+   let adviesTwee: boolean = false;
+   let adviesDrie: boolean = false;
+   let adviesVier: boolean = false;
+   let AdviesVijf: boolean = false;
 
    if(value<200)
      {
