@@ -13,7 +13,42 @@ export class MetingPage implements OnInit {
 
   abvDisplay = 'N/A';
 
-  constructor(public bluetooth: BluetoothService, public nav: IonNav, public ngZone: NgZone) { }
+  constructor(public bluetooth: BluetoothService, public nav: IonNav, public ngZone: NgZone) {
+
+   let value: number = 240;
+     let adviesEen: boolean =  false;
+     let adviesTwee: boolean = false;
+     let adviesDrie: boolean = false;
+     let adviesVier: boolean = false;
+     let adviesVijf: boolean = false;
+
+     if(value<200)
+       {
+           adviesEen = true;
+       }
+
+     if (value>=200 && value<280)
+       {
+           adviesTwee = true;
+       }
+       if (value>=280 && value<350)
+       {
+           adviesDrie = true;
+       }
+       if (value>=350 && value <450)
+       {
+           adviesVier = true;
+       }
+       if(value>450)
+       {
+          adviesVijf = true ;
+       }
+
+     }
+
+
+
+
 
   ngOnInit() {
   }
