@@ -44,4 +44,8 @@ export class DatabaseService {
       return this.db.executeSql('SELECT * FROM measurements', [])
           .catch(e => console.log(e));
     }
+    public getLastMeasurement() {
+        return this.db.executeSql('SELECT * FROM measurements ORDER BY id DESC LIMIT 1', [])
+            .catch(e => console.log(e));
+    }
 }
