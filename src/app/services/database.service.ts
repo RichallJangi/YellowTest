@@ -24,7 +24,7 @@ export class DatabaseService {
     })
         .then((db: SQLiteObject) => {
           this.db = db;
-          this.db.executeSql('DROP TABLE if exists measurements');
+          // this.db.executeSql('DROP TABLE if exists measurements');
           this.db.executeSql(
               'create table if not exists measurements(id INTEGER PRIMARY KEY AUTOINCREMENT , BAC FLOAT(6, 5), note VARCHAR(255), date TIMESTAMP(0)); ' +
               '', [])

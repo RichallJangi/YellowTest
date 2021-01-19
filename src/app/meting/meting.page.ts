@@ -2,6 +2,8 @@ import {Component, NgZone, OnInit} from '@angular/core';
 import {BluetoothService} from '../services/bluetooth.service';
 import {IonNav} from '@ionic/angular';
 import {BluetoothSelectPage} from '../bluetooth-select/bluetooth-select.page';
+import {stringify} from 'querystring';
+import {DatabaseService} from '../services/database.service';
 
 @Component({
   selector: 'app-meting',
@@ -12,6 +14,8 @@ export class MetingPage implements OnInit {
   connectPage = BluetoothSelectPage;
 
   abvDisplay = 'N/A';
+  isMeasuring = 0;
+  measurementCount: number;
 
   adviesEen =  false;
   adviesTwee = false;
@@ -19,7 +23,7 @@ export class MetingPage implements OnInit {
   adviesVier = false;
   adviesVijf = false;
 
-  constructor(public bluetooth: BluetoothService, public nav: IonNav, public ngZone: NgZone) {
+  constructor(public bluetooth: BluetoothService, public nav: IonNav, public ngZone: NgZone, public database: DatabaseService) {
      }
 
   ngOnInit() {
@@ -27,10 +31,23 @@ export class MetingPage implements OnInit {
 
   startMeasurement() {
     if (this.bluetooth.isConnected()) {
+      this.measurementCount = 0;
       this.bluetooth.subscribe().subscribe((abv) => {
         this.ngZone.run(() => {
           this.abvDisplay = abv;
           this.setAdvice(abv);
+          this.measurementCount += parseFloat(abv);
+          this.isMeasuring++;
+          if (this.isMeasuring >= 10) {
+            const measurement = this.measurementCount / this.isMeasuring;
+            console.log('' + this.measurementCount + ' / ' + this.isMeasuring + ' = ' + measurement);
+            this.abvDisplay = stringify(measurement);
+            this.database.insertMeasurement(measurement, 'feature not yet implemented');
+            this.isMeasuring = 0;
+            this.setAdvice(measurement);
+            this.bluetooth.unsubscribe();
+            console.log('finished measuring');
+          }
         });
         console.log('update: ' + this.abvDisplay);
       });
