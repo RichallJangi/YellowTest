@@ -1,50 +1,17 @@
-<ion-app>
-
-  <ion-header class="header">
-    <ion-toolbar>
-      <ion-title class="title-naam">Home</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+ <ion-img class="logo" src="../assets/img/Logo3.JPG"></ion-img>
 
   <ion-content class="top">
-    <section class="header-section">
+    <section class="btn-sectie1">
       <ion-button class="btn-advies" expand="block" (click)="nav.push(measurementPage)">Neem Meting</ion-button>
-
     </section>
-
-
-    <ion-grid>
-      <ion-row >
-        <ion-col col-6 >
-          <button ion-button full  href="#">Overzicht vorige week
-          </button>
-        </ion-col>
-        <ion-col col-6>
-          <button ion-button full href="#">Overzicht metingen</button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
 
     <section class="btn-sectie1">
-      <ion-button class="btn-advies" expand="block" href="#">Advies</ion-button>
+      <ion-button class="btn-advies" expand="block" (click)="nav.push(adviesPage)">Advies</ion-button>
     </section>
-
-    <ion-grid class="sectie3">
-      <ion-row>
-        <ion-col>
-          <ion-button class="btn-optie" href="#"><ion-icon name="construct"></ion-icon>Opties</ion-button>
-        </ion-col>
-        <ion-col size="6">
-          <ion-button class="btn-help" href="#"><ion-icon name="chatbubbles"></ion-icon>Help</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
   </ion-content>
 
   <ion-footer>
 
   </ion-footer>
-</ion-app>
+
 
