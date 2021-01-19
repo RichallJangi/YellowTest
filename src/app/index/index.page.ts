@@ -4,6 +4,7 @@ import {SQLite, SQLiteObject} from '@ionic-native/sqlite/ngx';
 import {DatabaseService} from '../services/database.service';
 import {format} from 'date-fns';
 import {MetingPage} from '../meting/meting.page';
+import {AdviesPage} from '../advies/advies.page';
 
 @Component({
   selector: 'app-index',
@@ -12,6 +13,8 @@ import {MetingPage} from '../meting/meting.page';
 })
 export class IndexPage implements OnInit {
   public measurementPage = MetingPage;
+  public advicePage = AdviesPage;
+
   public db: SQLiteObject;
   public error = 'nothing yet';
   public measurements;
