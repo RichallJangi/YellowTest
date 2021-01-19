@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {IonNav} from '@ionic/angular';
 
 @Component({
   selector: 'app-advies',
@@ -7,7 +6,7 @@ import {IonNav} from '@ionic/angular';
   styleUrls: ['./advies.page.scss'],
 })
 export class AdviesPage implements OnInit {
-     constructor(public nav: IonNav) {}
+     constructor() {}
   adviesEen =  false;
   adviesTwee = false;
   adviesDrie = false;
