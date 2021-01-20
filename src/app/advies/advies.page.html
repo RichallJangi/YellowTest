@@ -1,42 +1,27 @@
 <section class="header-section">
   <h1>Advies</h1>
 </section>
-<ion-card class=" meeting-card">
+<ion-card class="meeting-card">
   <ion-card-header>
     <ion-card-title class="card-title">Laatste meeting</ion-card-title>
   </ion-card-header>
 
   <ion-card-content class="content-text">
-    {{abvDisplay}}
+    <p>
+    {{meting}}
+    </p>
   </ion-card-content>
 </ion-card>
 
-<ion-card class=" advies-card">
+<ion-card class="advies-card">
   <ion-card-header>
     <ion-card-title class="card-title">Korte termijn advies</ion-card-title>
   </ion-card-header>
 
   <ion-card-content class="content-text">
-    <div *ngIf="adviesEen">
-      <p>Nuchter</p>
-    </div>
-
-    <div *ngIf="adviesTwee">
-      <p>Neem nog een glaasje</p>
-    </div>
-
-    <div *ngIf="adviesDrie">
-      <p>Oke nog eentje dan</p>
-    </div>
-
-    <div *ngIf="adviesDrie">
-      <p>Gaat fout</p>
-    </div>
-
-    <div *ngIf="adviesDrie">
-      <p>Ladderzat</p>
-    </div>
-
+    <p>
+     {{advies}}
+    </p>
   </ion-card-content>
 </ion-card>
 
