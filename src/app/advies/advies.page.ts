@@ -1,5 +1,6 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 import {DatabaseService} from '../services/database.service';
+import {IonNav} from '@ionic/angular';
 
 @Component({
   selector: 'app-advies',
@@ -7,7 +8,7 @@ import {DatabaseService} from '../services/database.service';
   styleUrls: ['./advies.page.scss'],
 })
 export class AdviesPage implements OnInit {
-  constructor(private database: DatabaseService, private zone: NgZone) {}
+  constructor(private database: DatabaseService, private zone: NgZone, public nav: IonNav) {}
   advies = 'wordt ingelezen';
   meting = 'wordt ingelezen';
   adviesEen =  false;
