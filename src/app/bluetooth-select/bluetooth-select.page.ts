@@ -47,7 +47,7 @@ export class BluetoothSelectPage implements OnInit {
       this.devices.push(device);
       console.log(device.name);
     });
-    if (device.name === 'YellowTest') {
+    if (device.name === 'HMSoft') {
       this.deviceSelected(device);
     }
   }
